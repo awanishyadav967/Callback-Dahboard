@@ -1,0 +1,23 @@
+{
+  "name": "authorized-security-testing-callback-dashboard",
+  "version": "1.0.0",
+  "description": "Simple Express callback logger for authorized security testing.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "express",
+    "security-testing",
+    "callback",
+    "poc"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
