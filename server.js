@@ -10,9 +10,6 @@ const logs = [];
 
 app.set("trust proxy", true);
 
-// Serve the static dashboard from the public directory.
-app.use(express.static(path.join(__dirname, "public")));
-
 // Capture useful request metadata for authorized callback testing.
 app.use((req, res, next) => {
   if (!ignoredLogPaths.has(req.path)) {
@@ -32,6 +29,9 @@ app.use((req, res, next) => {
 
   next();
 });
+
+// Serve the static dashboard after logging so visits to / are captured.
+app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/api/status", (req, res) => {
   res.json({
